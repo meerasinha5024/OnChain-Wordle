@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Chain Wordle</title>
+    <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff9e6;
+    color: #4d4d4d;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 3rem;
+    color: #f2a900;
+    margin-bottom: 20px;
+}
+
+/* Rules Section */
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Rules List */
+ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Input and Buttons */
+input[type="text"] {
+    font-size: 1.5rem;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #f2a900;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #ffcc00;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f2a900;
+    color: #fff;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffcc00;
+}
+
+button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+
+/* Feedback Section */
+#feedback {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #333;
+    padding: 10px;
+    border: 2px solid #f2a900;
+    border-radius: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+}
+
+#showFeedback{
+    display: none;
+}
+
+/* Wallet Connection */
+#walletStatus {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button#connectWallet {
+    background-color: #0078d4;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+button#connectWallet:hover {
+    background-color: #005a9e;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+    <h1>On-Chain Wordle</h1>
+    <p><strong>Rules:</strong></p>
+    <ul>
+        <li>Guess a 5-letter word.</li>
+        <li>"G" means the letter is correct and in the correct position.</li>
+        <li>"Y" means the letter is correct but in the wrong position.</li>
+        <li>"B" means the letter is not in the word.</li>
+    </ul>
+    <p>Example: If the secret word is <strong>APPLE</strong> and you guess <strong>ALERT</strong>, the feedback will be <strong>GYYBB</strong>.</p>
+
+    <!-- Wallet Connection -->
+    <button id="connectWallet">Connect Wallet</button>
+    <p id="walletStatus">Not connected</p>
+
+    <!-- Guess Submission -->
+    <input type="text" id="guess" maxlength="5" placeholder="Enter your guess">
+    <button id="submitGuess" disabled>Submit Guess</button>
+    <button id="showFeedback" onclick="showFeedback()" disabled>Show Feedback</button>
+    <div id="feedback"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
