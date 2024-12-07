@@ -15,30 +15,16 @@ Welcome to the On-Chain Wordle game! This game is fully decentralized and runs o
 - **Game End**: The game ends when a player correctly guesses the secret word.
 - **Transparency**: All game events and transactions are recorded on the blockchain.
 
-## How It Works
+### Contract Details
 
-1. **Connect Wallet**: Players connect their MetaMask wallet to the DApp.
-2. **Game Start**: One player can set an initial secret word.
-3. **Submit Guesses**: Players submit their guesses in turn. After each guess, feedback is provided.
-4. **Game End**: The game ends when a player guesses the word correctly.
+- **Contract Address**: `0x6834fa556f198c6F075D28b5FA9Ee5531dB8aD9D`
+- **Sender Address**: `0x59c81c0E48185B193BbEDc684457acdE136E9823`
+- **Network**: Mantle Sepolia Testnet
 
-### Rules
+### Deployment
 
-- **Guess**: Each player submits a 5-letter word as their guess.
-- **Feedback**: After each guess, players receive feedback in the form of colors (Green, Yellow, or Black).
-- **Turns**: Players take turns submitting guesses in the correct order.
-- **Ending the Game**: The game ends once the correct word is guessed.
-
-## Gameplay Example
-
-- **Secret Word**: `APPLE`
-- **Guess**: `ALERT`
-- **Feedback**: `GYBBG`
-
-In this example:
-- The first letter `A` is in the correct position (Green).
-- The second letter `L` is in the wrong position (Yellow).
-- The letters `E`, `R`, and `T` are not in the word at all (Black).
+- **Transaction Hash**: [Link](https://sepolia.mantlescan.xyz/address/0x6834fa556f198c6F075D28b5FA9Ee5531dB8aD9D)
+- **Coin Used**: MNT
 
 ## Features on the Blockchain
 
@@ -54,14 +40,6 @@ In this example:
 4. **Submit Guesses**: Players submit their guesses through the web interface. After each guess, feedback is provided to the player.
 5. **Wait for Turn**: Only the player whose turn it is can submit a guess. The turn order is automatically managed by the smart contract.
 
-## Interface Overview
-
-- **Connect Wallet**: Button to connect your MetaMask wallet.
-- **Guess Word Input**: Text input field to enter your guess.
-- **Submit Guess**: Button to submit your word guess.
-- **Feedback Display**: Area to display feedback after each guess (Green, Yellow, Black).
-- **Player Registration**: Register your wallet to participate in the game.
-
 ## Smart Contract
 
 The game logic is handled by a Solidity smart contract deployed on the Ethereum blockchain. Key functions include:
@@ -74,10 +52,8 @@ The game logic is handled by a Solidity smart contract deployed on the Ethereum 
 - `lastWord()`: Gets the last word guessed.
 - `currentPlayer()`: Gets the current player's address.
 
-## Contributing
+## IMAGES
+<img width="1438" alt="Screenshot 2024-12-07 at 10 54 59 PM" src="https://github.com/user-attachments/assets/54aa6f36-3650-4bfd-a33c-4dc51727726d">
 
-If you have ideas for improvements or want to contribute, feel free to fork the repository and create a pull request.
+<img width="1438" alt="Screenshot 2024-12-07 at 10 55 30 PM" src="https://github.com/user-attachments/assets/a4e5fb00-c52c-4329-bf7e-1d914fd9b7ec">
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
